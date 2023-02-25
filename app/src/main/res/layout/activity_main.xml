@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#054A08"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#033A0B"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:titleTextColor="@color/white"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="Namoz Vaqtlari"
+            app:titleTextAppearance="@style/MyTitleTextApperance" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:id="@+id/layout_top"
+            android:visibility="invisible"
+            android:layout_height="0dp"
+            android:layout_weight="0.9"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name_current"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:autoSizeMaxTextSize="28sp"
+                android:autoSizeMinTextSize="22sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="bottom|center_horizontal"
+                android:text="Xufton"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_time_current"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.8"
+                android:autoSizeMaxTextSize="100dp"
+                android:autoSizeMinTextSize="20sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="19:14"
+                android:textColor="@color/white"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/tv_time_left"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:autoSizeMaxTextSize="25sp"
+                android:autoSizeMinTextSize="22sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="top|center_horizontal"
+                android:text="-00.05.16"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_region"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="0.4"
+                android:autoSizeMaxTextSize="22sp"
+                android:autoSizeMinTextSize="12sp"
+                android:layout_marginBottom="5dp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:gravity="bottom|start"
+                android:text="Fergana"
+                android:textColor="@color/white" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_bottom"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.1"
+            android:background="@drawable/layout_back"
+            android:orientation="vertical">
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5">
+
+                <ImageView
+                    android:id="@+id/btn_left"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:src="@drawable/baseline_keyboard_arrow_left_24" />
+
+
+                <TextView
+                    android:id="@+id/tv_weekday"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="7dp"
+                    android:layout_weight="5"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:text="Dushanba"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/btn_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?selectableItemBackground"
+                    android:src="@drawable/baseline_keyboard_arrow_right_24" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#A6A6A6" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:padding="3dp"
+                    android:text="Bomdod"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_bomdod_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:autoSizeMaxTextSize="30dp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:padding="3dp"
+                    android:text="Quyosh"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_quoyosh_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:padding="3dp"
+                    android:text="Peshin"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_peshin_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:padding="3dp"
+                    android:text="Asr"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_asr_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:padding="3dp"
+                    android:text="Shom"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_shom_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:padding="3dp"
+                    android:text="Xufton"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_xufton_time"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:autoSizeMaxTextSize="30sp"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:padding="3dp"
+                    android:text="00:00"
+                    android:textColor="@color/black"
+                    android:textStyle="bold" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
