@@ -1,6 +1,6 @@
 package com.sultonbek1547.ramazontaqvim.model
 
-data class NamozModel(
+data class Taqvim(
     val date: String,
     val region: String,
     val times: Times,

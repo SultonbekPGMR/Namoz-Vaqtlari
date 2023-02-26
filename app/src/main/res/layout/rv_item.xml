@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp">
+
+    <TextView
+        android:id="@+id/day_name"
+        android:layout_width="0dp"
+        android:text="kun/oy"
+        android:gravity="center"
+        android:textColor="#73EA73"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/tong_saharlik"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Bomdod"
+        android:gravity="center"
+        android:textColor="#73EA73"
+        android:layout_weight="1.2" />
+
+    <TextView
+        android:id="@+id/quyosh"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Quyosh"
+        android:gravity="center"
+        android:textColor="#73EA73"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/peshin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Peshin"
+        android:gravity="center"
+        android:textColor="#73EA73"
+        android:layout_weight="1" />
+
+
+    <TextView
+        android:id="@+id/asr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Asr"
+        android:gravity="center"
+        android:textColor="#73EA73"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/shom_iftor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Shom"
+        android:gravity="center"
+        android:textColor="#73EA73"
+        android:layout_weight="1" />
+
+    <TextView
+        android:id="@+id/hufton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Xufton"
+        android:gravity="center"
+        android:textColor="#73EA73"
+        android:layout_weight="1" />
+
+
+</TableRow>
