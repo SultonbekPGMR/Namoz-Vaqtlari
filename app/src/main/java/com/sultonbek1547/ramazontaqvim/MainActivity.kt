@@ -117,6 +117,36 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+
+    private fun findNextTime(givenTime: String) {
+        val targetTime = LocalTime.parse(givenTime)
+        val timeList = listOf(
+            LocalTime.parse(currentItem.times.asr),
+            LocalTime.parse(currentItem.times.hufton),
+            LocalTime.parse(currentItem.times.peshin),
+            LocalTime.parse(currentItem.times.quyosh),
+            LocalTime.parse(currentItem.times.shom_iftor),
+            LocalTime.parse(currentItem.times.tong_saharlik)
+        )
+        val sortedTimeList = timeList.sorted()
+        val nameList = arrayOf(
+            "Quyosh",
+            "Bomdod",
+            "Peshin",
+            "Asr",
+            "Shom",
+            "Xufton"
+        )
+        for ((index, time) in sortedTimeList.withIndex()) {
+            if (time.isAfter(targetTime)) {
+                nextPrayerTime = time.format(DateTimeFormatter.ofPattern("HH:mm"))
+                binding.tvNameCurrent.text = nameList[index]
+                return
+            }
+        }
+    }
+
+
     private fun findClosestMatch(givenTime: String): String {
         val timesMap = mapOf(
             "Quyosh" to currentItem.times.quyosh,
@@ -139,7 +169,6 @@ class MainActivity : AppCompatActivity() {
         }
 
         nextPrayerTime = timesMap[closestMatch]!!
-        binding.tvTimeLeft.text = closestDistance.toString()
         return closestMatch ?: ""
     }
 
@@ -154,22 +183,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadNextPrayerTime() {
-        val targetTime = LocalTime.parse(
-            "$nextPrayerTime:00", DateTimeFormatter.ofPattern("HH:mm:ss")
-        )
-        val currentTime = LocalTime.now()
-
-        val duration =
-            if (targetTime.isAfter(currentTime)) Duration.between(currentTime, targetTime)
-            else Duration.between(currentTime, targetTime.plusHours(24))
-
-        /**milisekunds for timer */
-        nextTimeMillis = duration.toMillis()
-
         /** starting timer */
         startTimer()
         binding.apply {
-            tvNameCurrent.text = findClosestMatch(
+            findNextTime(
                 LocalDateTime.now(ZoneId.systemDefault())
                     .format(DateTimeFormatter.ofPattern("HH:mm"))
             )
@@ -178,15 +195,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startTimer() {
-        val targetTime = LocalTime.parse("05:34:00", DateTimeFormatter.ofPattern("HH:mm:ss"))
-        val currentTime = LocalTime.now()
+        val targetTime =
+            LocalTime.parse("$nextPrayerTime:00", DateTimeFormatter.ofPattern("HH:mm:ss"))
+        val currentTime = LocalTime.now().withSecond(0)
 
         val duration =
             if (targetTime.isAfter(currentTime)) Duration.between(currentTime, targetTime)
             else Duration.between(currentTime, targetTime.plusHours(24))
 
-        val nextTimeMillis = duration.toMillis()
-
+        /**milisekunds for timer */
+        nextTimeMillis = duration.toMillis()
         countDownTimer = object : CountDownTimer(nextTimeMillis, 1000) {
             override fun onTick(p0: Long) {
                 val remainingTime = Duration.ofMillis(p0)
@@ -198,10 +216,11 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                loadNextPrayerTime()
+                //  loadNextPrayerTime()
             }
         }
         countDownTimer.start()
+
     }
 
 
