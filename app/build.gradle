@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.sultonbek1547.ramazontaqvim'
+    namespace 'com.sultonbek1547.namozvaqtlari'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.sultonbek1547.ramazontaqvim"
+        applicationId "com.sultonbek1547.namozvaqtlari"
         minSdk 26
         targetSdk 33
         versionCode 1
